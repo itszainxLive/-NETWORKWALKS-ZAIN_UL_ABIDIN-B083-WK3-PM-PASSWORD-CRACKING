@@ -140,9 +140,9 @@ The same Hash Calculator → Password Cracker process (Steps 1–9 above) was re
 
 | PDF File | Cracked Password |
 |---|---|
-| My Locked PDF1.pdf | good-luck |
+| My Locked PDF1.pdf | *good-luck* |
 | My Locked PDF2.pdf | *Password1* |
-| My Locked PDF3.pdf | ** |
+| My Locked PDF3.pdf | *1qazwsx* |
 
 ---
 
