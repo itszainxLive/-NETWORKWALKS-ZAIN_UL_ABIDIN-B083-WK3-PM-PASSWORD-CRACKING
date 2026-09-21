@@ -74,11 +74,11 @@ In this lab task, John the Ripper is used to recover the password of a protected
 ## PDF 1 — My Locked PDF1.pdf
 
 ### Screenshot
-![John the Ripper Cracking Result - PDF1](screenshots/task1-john-crack-pdf1.png)
+![John the Ripper Cracking Result - PDF1](screenshots/task1-john-crack.png)
 
 ### 🏁 Flag Captured
 
-![Flag Captured - PDF1](screenshots/task1-flag-captured-pdf1.png)
+![Flag Captured - PDF1](screenshots/flag.png)
 
 **Flag1:** `nw{cybersecurity_flag_captured_2608}`
 
