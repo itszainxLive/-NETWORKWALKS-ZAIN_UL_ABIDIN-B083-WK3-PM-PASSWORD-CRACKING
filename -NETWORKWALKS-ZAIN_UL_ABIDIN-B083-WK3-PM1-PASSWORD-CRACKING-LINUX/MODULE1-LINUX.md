@@ -36,51 +36,77 @@ Johnny is the graphical version of John the Ripper, giving a simple point-and-cl
 
 In this lab task, John the Ripper is used to recover the password of a protected PDF file. This exercise helps demonstrate how password cracking works and why it is important to use strong passwords for protection.
 
-**Note:** The original lab guide uses Windows with the Johnny GUI. Since John the Ripper comes pre-installed on Kali Linux, this task was completed directly in the Kali terminal instead, with the instructor's permission to use any OS.
+**Note:** This task was completed on Windows using John the Ripper (JTR) command-line tool together with Johnny, its graphical interface — following the original lab guide exactly.
 
 ---
 
 # 🪜 Task & Solution
 
-**Task:** Crack the password of the attached PDF file (`My Locked PDF1.pdf`) using JTR.
+**Task:** Crack the password of the attached PDF files (`My Locked PDF1.pdf`, `My Locked PDF2.pdf`, `My Locked PDF3.pdf`) using JTR JOHN and JTR JOHNNY tools on Windows PC.
 
-## Solution Steps (Kali Linux)
+## General Solution Steps (Windows)
 
-1. Confirm John the Ripper is available (pre-installed on Kali):
-   ```bash
-   john --version
-   ```
+1. Download **John the Ripper** from the official website:
+   `https://www.openwall.com/john/`
 
-2. Copy `My Locked PDF1.pdf` into the working directory (e.g. Desktop or home folder) in the Kali VM.
+2. Download **Johnny** (the GUI for John the Ripper):
+   `https://openwall.info/wiki/john/johnny`
 
-3. Extract a crackable hash from the PDF using the `pdf2john` helper script that ships with John the Ripper:
-   ```bash
-   pdf2john.pl "My Locked PDF1.pdf" > hash1.txt
-   ```
-   *(On some Kali versions this script is `pdf2john.py` — check with `locate pdf2john` if `pdf2john.pl` is not found.)*
+3. Run the Johnny setup file and complete the installation.
 
-4. Run John the Ripper against the extracted hash, using a wordlist (e.g. `rockyou.txt`, provided in the shared dictionaries folder):
-   ```bash
-   john --wordlist=~/Desktop/rockyou.txt hash1.txt
-   ```
+4. Open Johnny after installation.
 
-5. Once cracked, view the recovered password:
-   ```bash
-   john --show hash1.txt
-   ```
+5. Click on **Settings**, then **Browse**, and select **john.exe** — this file is located in the **run** folder of the John the Ripper installation.
 
-6. Open the encrypted PDF and enter the cracked password to confirm it opens successfully.
-
-### Screenshot
-![John the Ripper Cracking Result](screenshots/task1-john-crack.png)
+6. For each locked PDF file, repeat the following:
+   - Open the online hash extractor tool: `https://www.onlinehashcrack.com/tools-pdf-hash-extractor.php`
+   - Browse to the PDF file and click **Upload**.
+   - Select and copy the generated hash value.
+     *Note: If the hash contains extra characters like `b'` at the start, remove them when saving — the hash value should be in the format starting with `$pdf$....`*
+   - Open **Notepad**, paste the hash value, and save the file (e.g. `hash1.txt`, `hash2.txt`, `hash3.txt`).
+   - Open **Johnny**, click **"Open password file"**, browse to the saved hash file, and click **Open**.
+   - Click **"Start new attack"**.
+   - Wait for Johnny to crack the password (time depends on computer speed and password complexity).
+   - Use the recovered password to open the corresponding encrypted PDF and confirm it opens successfully.
 
 ---
 
-## 🏁 Flag Captured
+## PDF 1 — My Locked PDF1.pdf
 
-![Flag Captured](screenshots/flag.png)
+### Screenshot
+![John the Ripper Cracking Result - PDF1](screenshots/task1-john-crack-pdf1.png)
+
+### 🏁 Flag Captured
+
+![Flag Captured - PDF1](screenshots/task1-flag-captured-pdf1.png)
 
 **Flag1:** `nw{cybersecurity_flag_captured_2608}`
+
+---
+
+## PDF 2 — My Locked PDF2.pdf
+
+### Screenshot
+![John the Ripper Cracking Result - PDF2](screenshots/task1-john-crack-pdf2.png)
+
+### 🏁 Flag Captured
+
+![Flag Captured - PDF2](screenshots/flag2.png)
+
+**Flag2:** *(nw{networkwalks_persistence_jtr_270521})*
+
+---
+
+## PDF 3 — My Locked PDF3.pdf
+
+### Screenshot
+![John the Ripper Cracking Result - PDF3](screenshots/task1-john-crack-pdf3.png)
+
+### 🏁 Flag Captured
+
+![Flag Captured - PDF3](screenshots/task1-flag-captured-pdf3.png)
+
+**Flag3:** *(nw{networkwalks_flag_260821_1})*
 
 ---
 
