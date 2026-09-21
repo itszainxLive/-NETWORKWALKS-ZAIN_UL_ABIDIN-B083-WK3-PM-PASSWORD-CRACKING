@@ -104,7 +104,7 @@ In this lab task, John the Ripper is used to recover the password of a protected
 
 ### 🏁 Flag Captured
 
-![Flag Captured - PDF3](screenshots/task1-flag-captured-pdf3.png)
+![Flag Captured - PDF3](screenshots/flag3.png)
 
 **Flag3:** *(nw{networkwalks_flag_260821_1})*
 
